@@ -704,17 +704,15 @@ textarea {
 .site-header {
   mix-blend-mode: normal;
   background: black;
-  /*padding: 0.5rem 1rem;*/
   padding: 0 1rem;
   position: sticky;
   font-family: 'Raleway', sans-serif;
   transition: box-shadow 0.4s ease-in, box-shadow 0.2s ease-out,
     background 0.3s ease-in-out;
-    z-index: 1;
+  z-index: 1;
 }
 
 .site-header.alt {
-  /*background: rgba(69, 80, 107, 0.7);*/
   background: rgb(69, 80, 107);
   box-shadow: 0 0 0.5rem 0.2rem rgba(69, 80, 107, 0.7);
 }
@@ -768,10 +766,6 @@ textarea {
   margin: auto 0 auto auto;
 }
 .main-navigation ul {
-  /*display: none;*/
-  /*list-style: none;*/
-  /*margin: 1rem;*/
-  /*padding-left: 0;*/
   display: flex;
   flex-wrap: wrap;
   overflow: visible;
@@ -780,9 +774,14 @@ textarea {
   padding: 0;
 }
 
+.main-navigation ul span {
+  display: flex;
+  width: 100%;
+}
+
 /* Ensure dropdown isn't shown on closed small menu or on large menu. */
-.main-navigation ul li i{
-    display: none;
+.main-navigation ul li i {
+  display: none;
 }
 
 .main-navigation ul li a {
@@ -814,7 +813,6 @@ textarea {
   display: inline-flex;
 }
 
-
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
   display: block;
@@ -837,48 +835,36 @@ textarea {
 }
 
 /* Small menu. */
-.menu-toggle,
+
 .main-navigation.toggled ul {
   display: block;
-}
-
-.main-navigation.toggled ul li.menu-item-has-children > i,
-.main-navigation.toggled ul li.page_item_has_children > i{
-    /*Show down arrow only when small menu is toggled and item has children.*/
-    display: inline-block;
-}
-
-.main-navigation.toggled ul li a {
-  display: inline-block;
-}
-
-/*@media screen and (min-width: 37.5em) {*/
-/*.menu-toggle {*/
-/*display: none;*/
-/*}*/
-
-/*.main-navigation ul {*/
-/*display: flex;*/
-/*}*/
-/*}*/
-
-.main-navigation.toggled ul {
   height: 100%;
   width: 250px;
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #111;
+  /*background-color: #111;*/
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
   background: rgba(0, 0, 0, 0.9);
 }
+
+.main-navigation.toggled ul li.menu-item-has-children > span > i,
+.main-navigation.toggled ul li.page_item_has_children > span > i {
+  /*Show down arrow only when small menu is toggled and item has children.*/
+  display: inline-block;
+  padding: 1rem;
+  margin: auto 0rem auto auto;
+}
+
 .main-navigation.toggled ul li {
   position: static;
+  width: 100%; /* Ensure each menu item takes up 100% */
 }
 .main-navigation.toggled ul li a {
   margin: 0.5rem 1rem;
+  display: inline-block;
 }
 .main-navigation.toggled ul ul li {
   display: block;
@@ -889,19 +875,21 @@ textarea {
   position: static;
   border: none;
   padding-top: 0px;
+  padding-left: 1rem;
+  background: rgba(0,0,0,0.0);
 }
 .main-navigation.toggled ul ul.active {
-  display: inline;
+  /*display: inline;*/
 }
-.main-navigation.toggled ul li:hover > ul,
+/*.main-navigation.toggled ul li:hover > ul,*/
 .main-navigation.toggled ul li.focus > ul {
   position: static;
-  display: block;
+  display: flex;
   left: 0;
   top: 0;
 }
 
-.main-navigation.toggled ul ul li:hover > ul,
+/*.main-navigation.toggled ul ul li:hover > ul,*/
 .main-navigation.toggled ul ul li.focus > ul {
   position: static;
   display: block;

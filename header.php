@@ -57,8 +57,8 @@
 				array(
 					'theme_location' => 'menu-1',
                     'menu_id'        => 'primary-menu',
-                    'before'         => '',
-                    'after'          =>  '<i class="fas fa-caret-down dropdown-menu"></i>',
+                    'before'         => '<span class="menu-item-container">',
+                    'after'          =>  '<i class="fas fa-caret-down dropdown-menu"></i></span>',
                     'fallback_cb'	 => 'fallback_top_menu',
 				)
 			);

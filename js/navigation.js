@@ -61,16 +61,16 @@
   const links = menu.getElementsByTagName('a');
 
   // Get all the link elements with children within the menu.
-  const linksWithChildren = menu.querySelectorAll(
+  /* const linksWithChildren = menu.querySelectorAll(
     '.menu-item-has-children > a, .page_item_has_children > a',
-  );
+  ); */
   // Get all the navigation elements with the child down arrows of menu.
   const navWithChildArrows = menu.querySelectorAll(
-      '.menu-item-has-children > i, .page_item_has_children > i'
+    '.menu-item-has-children > span > i, .page_item_has_children > span > i',
   );
   // Toggle focus each time a menu link is focused or blurred.
   for (const link of links) {
-    link.addEventListener('focus', toggleFocus, true);
+    //link.addEventListener('focus', toggleFocus, true);
     link.addEventListener('blur', toggleFocus, true);
   }
 
@@ -81,7 +81,9 @@
   }*/
 
   // Toggle focus each time a menu down arrow with children receive a touch event.
-  
+  for (const arrow of navWithChildArrows) {
+      arrow.addEventListener('touchstart' ,toggleFocus, false)
+  }
   /**
    * Sets or removes .focus class on an element.
    */
@@ -100,7 +102,7 @@
     }
 
     if (event.type === 'touchstart') {
-      const menuItem = this.parentNode;
+      const menuItem = this.parentNode.parentNode;
       event.preventDefault();
       for (const link of menuItem.parentNode.children) {
         if (menuItem !== link) {
