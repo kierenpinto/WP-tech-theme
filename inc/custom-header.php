@@ -76,3 +76,8 @@ if ( ! function_exists( 'tech_header_style' ) ) :
 		<?php
 	}
 endif;
+
+function fallback_top_menu(){
+    $url = get_home_url() . "/wp-admin/nav-menus.php?action=locations";
+    echo "<div> There is no menu selected. Go to <a href=\"$url\"> Menu Settings </a> and select a Primary menu.</div>";
+}
