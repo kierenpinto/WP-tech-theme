@@ -61,3 +61,9 @@
 		<?php tech_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+<?php
+	if (!is_singular()) : 
+		echo '<hr class="hr anim"\>';
+		// echo "hi";
+	endif;
+?>
